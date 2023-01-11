@@ -1,14 +1,15 @@
-main.o: main.o funcs.o
-	g++ -o main main.o funcs.o
+CXXFLAGS = -g -Wall -std=c++11
+main: main.o
+	g++ $(CXXFLAGS) -o main main.o
 
-main.o: main.cpp
+main.o: main.cpp funcs.o
 
-funcs.o: funcs.cpp funcs.h
+funcs.o: funcs.cxx funcs.h
 
-tests: tests.o 
-	g++ -o tests tests.o
+tests: tests.o
+	g++ $(CXXFLAGS) -o tests tests.o
 
-tests.o: tests.cpp 
+tests.o: tests.cpp doctest.h funcs.o
 
 clean:
 	rm -f main tests main.o funcs.o tests.o
