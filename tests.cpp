@@ -9,19 +9,29 @@ TEST_CASE("Methods and Assigning") {
 	MyVector<double> d;
 	
 	d.push_back(6.5);
+	d.push_back(22.3);
+	d.push_back(789.0);
 	i.push_back(5);
 	i.pop_back();
 
 	CHECK(i.empty() == 1);
 	CHECK(d.empty() == 0);
+	
 	CHECK(d[0] == 6.5);
+	CHECK(d[1] == 22.3);
+	CHECK(d[2] == 789.0);
 
 	CHECK(i.capacity() == 10);
 	CHECK(s.capacity() == 5);
 	CHECK(d.capacity() == 10);
+	
 	CHECK(i.size() == 0);
 	CHECK(s.size() == 0);
-	CHECK(d.size() == 1);
+	CHECK(d.size() == 3);
+
+	d.clear();
+	CHECK(d.size() == 0);
+
 }
 
 TEST_CASE("Dynamic Array") {
