@@ -50,8 +50,16 @@ void MyVector<T>::push_back(T item){
 }
 
 template<class T>
-void MyVector<T>::pop_back() {
+void MyVector<T>::pop_back(int n) {
+        for(int i = n; i < size() - 1; i++) {
+		arr[i] = arr[i+1];
+	}
 	s--;
+}
+
+template<class T>
+void MyVector<T>::pop_back() {
+	s--; //removes last element
 }
 
 template<class T>

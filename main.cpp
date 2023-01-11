@@ -21,7 +21,7 @@ int main() {
 	i.print();
 	std::cout << "size: " << i.size() << " capacity: " << i.capacity() << std::endl;
 
-	i.pop_back();
+	i.pop_back(2);
 	i.print();
 	std::cout << "size: " << i.size() << " capacity: " << i.capacity() << std::endl;
 
